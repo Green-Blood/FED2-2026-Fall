@@ -29,6 +29,7 @@ public class BobMovement : MonoBehaviour
         bobAnimator.SetFloat("Speed", horizontal * speed);
         Debug.Log("No, I am on github");
 
+        Debug.Log("I am on github");
         if (horizontal < 0)
         {
             flip = true;
