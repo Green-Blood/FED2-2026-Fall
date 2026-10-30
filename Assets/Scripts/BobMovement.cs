@@ -9,9 +9,9 @@ public class BobMovement : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private Animator bobAnimator;
     [SerializeField] private SpriteRenderer spriteRenderer;
-    
-    
-    
+
+
+
     private float score = 0;
     private bool flip = false;
 
@@ -28,7 +28,8 @@ public class BobMovement : MonoBehaviour
         transform.Translate(new Vector3(horizontal, vertical, 0) * speed * Time.deltaTime);
         bobAnimator.SetFloat("Speed", horizontal * speed);
 
-        if(horizontal < 0)
+        Debug.Log("I am on github");
+        if (horizontal < 0)
         {
             flip = true;
         }
@@ -37,12 +38,12 @@ public class BobMovement : MonoBehaviour
             flip = false;
         }
         spriteRenderer.flipX = flip;
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Coin"))
+        if (other.CompareTag("Coin"))
         {
             score = score + 1;
 
